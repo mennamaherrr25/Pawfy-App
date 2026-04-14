@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:pawfy_app/core/routing/app_routes.dart';
+
+class AppRouter {
+  static Route onGenerateRoute(RouteSettings setting) {
+    switch (setting.name) {
+      case AppRoutes.login:
+        return MaterialPageRoute(builder: (context) => Container());
+      case AppRoutes.signup:
+        return MaterialPageRoute(builder: (context) => Container());
+      case AppRoutes.home:
+        return MaterialPageRoute(builder: (context) => Container());
+
+      case AppRoutes.layout:
+        return MaterialPageRoute(builder: (context) => Container());
+
+      case AppRoutes.category:
+        return MaterialPageRoute(builder: (context) => Container());
+
+      case AppRoutes.cart:
+        return MaterialPageRoute(builder: (context) => Container());
+
+      case AppRoutes.profile:
+        return MaterialPageRoute(builder: (context) => Container());
+
+      case AppRoutes.productDetails:
+        return MaterialPageRoute(builder: (context) => Container());
+
+      default:
+        return MaterialPageRoute(
+          builder: (context) => Scaffold(
+            body: Center(
+              child: Text('No route is defined for ${setting.name}'),
+            ),
+          ),
+        );
+    }
+  }
+}

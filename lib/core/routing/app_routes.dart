@@ -1,0 +1,10 @@
+class AppRoutes {
+  static const String home = '/home';
+  static const String login = '/login';
+  static const String signup = '/signup';
+  static const String layout = '/layout';
+  static const String productDetails = '/productDetails';
+  static const String category = '/category';
+  static const String cart = '/cart';
+  static const String profile = 'profile';
+}
