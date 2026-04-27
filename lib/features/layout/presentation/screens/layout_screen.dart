@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
+import 'package:pawfy_app/features/cart/presentation/screens/cart_screen.dart';
 import 'package:pawfy_app/features/home/presentation/screens/home_screen.dart';
-
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
 
@@ -15,7 +15,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
   final List<Widget> _screens = const [
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    CartScreen(),
     HomeScreen(),
   ];
 
