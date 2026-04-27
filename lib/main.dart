@@ -6,6 +6,8 @@ import 'package:pawfy_app/features/on_boarding/presentation/views/splash_view.da
 import 'package:pawfy_app/features/on_boarding/presentation/views/onboarding_view.dart';
 import 'package:pawfy_app/features/on_boarding/presentation/views/onboarding1.dart';
 import 'package:pawfy_app/core/routing/app_router.dart';
+import 'package:pawfy_app/core/routing/app_router.dart';
+import 'package:pawfy_app/core/routing/app_routes.dart';
 
 void main() {
   runApp(const PawfyApp());

@@ -4,6 +4,8 @@ import 'package:pawfy_app/features/auth/presentation/views/login_view.dart';
 import 'package:pawfy_app/features/auth/presentation/views/signup_view.dart';
 import 'package:pawfy_app/features/on_boarding/presentation/views/splash_view.dart';
 import 'package:pawfy_app/features/on_boarding/presentation/views/onboarding_view.dart';
+import 'package:pawfy_app/features/home/presentation/screens/home_screen.dart';
+import 'package:pawfy_app/features/layout/presentation/screens/layout_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings setting) {
@@ -21,10 +23,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => SignupView());
       
       case AppRoutes.home:
-        return MaterialPageRoute(builder: (context) => Container());
+        return MaterialPageRoute(builder: (context) => HomeScreen());
 
       case AppRoutes.layout:
-        return MaterialPageRoute(builder: (context) => Container());
+        return MaterialPageRoute(builder: (context) => LayoutScreen());
 
       case AppRoutes.category:
         return MaterialPageRoute(builder: (context) => Container());
