@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pawfy_app/core/theme/app_colors.dart';
+import 'package:pawfy_app/feature/category/view/category_screen.dart';
+import 'package:pawfy_app/feature/product_details/view/product_details_screen.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/routing/app_routes.dart';
 import 'package:pawfy_app/features/auth/presentation/views/login_view.dart';
@@ -16,11 +19,17 @@ void main() {
 class PawfyApp extends StatelessWidget {
   const PawfyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pawfy App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.background,
+        fontFamily: 'Inter',
+      ),
+      // home: const CategoryScreen(),
+      home: ProductDetailsScreen(),
       theme: ThemeData(scaffoldBackgroundColor: AppColors.backgroundColor),
       //home: LoginView(),
       onGenerateRoute: AppRouter.onGenerateRoute,
