@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartHeader extends StatelessWidget {
   final int itemCount;
   final bool isPriority;
 
-  const CartHeader({
+  CartHeader({
     super.key,
     required this.itemCount,
     this.isPriority = true,
@@ -15,12 +16,12 @@ class CartHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16, top: 4),
+      padding: EdgeInsets.only(bottom: 16.h, top: 4.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Your Cart', style: AppTextStyles.cartTitle),
-          const SizedBox(height: 4),
+          Text('Your Cart', style: AppTextStyles.cartTitle),
+          SizedBox(height: 4.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -30,17 +31,17 @@ class CartHeader extends StatelessWidget {
               ),
 
               if (isPriority) ...[
-                const SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 4,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
                   ),
                   decoration: BoxDecoration(
                     color: AppColors.secondaryColor,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.r),
                   ),
-                  child: const Text(
+                  child: Text(
                     '⚡ ORGANIC PRIORITY',
                     style: TextStyle(
                       fontSize: 9,

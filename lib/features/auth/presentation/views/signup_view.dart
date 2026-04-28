@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
 import 'package:pawfy_app/features/auth/presentation/widgets/auth_footer.dart';
 import 'package:pawfy_app/features/auth/presentation/widgets/auth_header.dart';
 import 'package:pawfy_app/features/auth/presentation/widgets/signup_form.dart';
 
+/// =========================================================
+/// 📝 SignupView - Account Registration
+/// =========================================================
+/// Allows new users to create an account. Features a modern, 
+/// clean design with clear input validation (implemented via SignupForm).
 class SignupView extends StatelessWidget {
-  const SignupView({super.key});
+  SignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +22,9 @@ class SignupView extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppColors.lightpurple,
-              AppColors.primaryColor,
-              AppColors.backgroundColor,
+              AppColors.primaryLight,
+              AppColors.primary,
+              AppColors.background,
             ],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -36,16 +42,16 @@ class SignupView extends StatelessWidget {
 }
 
 class SignUpBody extends StatelessWidget {
-  const SignUpBody({super.key});
+  SignUpBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20.r),
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 30),
+            padding: EdgeInsets.only(bottom: 30.h),
             child: AuthHeader(
               title: 'Join Pawfy',
               subTitle:
@@ -59,7 +65,7 @@ class SignUpBody extends StatelessWidget {
             },
             buttonText: 'Login',
             buttonTextStyle: AppTextStyles.s14rw600Inter().copyWith(
-              color: AppColors.lightpurple,
+              color: AppColors.primaryLight,
             ),
             text: 'Already have an account?',
           ),

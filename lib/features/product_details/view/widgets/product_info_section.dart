@@ -4,60 +4,58 @@ import 'package:pawfy_app/core/constants/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../view_model/product_details_cubit.dart';
 import '../../view_model/product_details_state.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductInfoSection extends StatelessWidget {
-  const ProductInfoSection({Key? key}) : super(key: key);
+  ProductInfoSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Tags
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 decoration: BoxDecoration(
                   color: AppColors.tagLightBlue,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                 ),
-                child: const Text(
+                child: Text(
                   'NEW ARRIVAL',
-                  style: TextStyle(
+                  style: AppTextStyles.bodySmall.copyWith(
                     color: AppColors.tagDarkTeal,
-                    fontSize: 10,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: 8.w),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                 decoration: BoxDecoration(
                   color: AppColors.tagDarkTeal.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                 ),
-                child: const Text(
+                child: Text(
                   'OASIS FOR DELIVERY',
-                  style: TextStyle(
+                  style: AppTextStyles.bodySmall.copyWith(
                     color: Colors.white,
-                    fontSize: 10,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16.h),
           // Title
-          const Text(
+          Text(
             'Royal Canin Mini Adult',
-            style: AppTextStyles.titleLarge,
+            style: AppTextStyles.displayMedium,
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
           
           // Rating and Price
           Row(
@@ -69,34 +67,31 @@ class ProductInfoSection extends StatelessWidget {
                     Row(
                       children: List.generate(
                         5,
-                        (index) => const Icon(
+                        (index) => Icon(
                           Icons.star,
                           color: AppColors.starColor,
-                          size: 14, // Slightly smaller stars
+                          size: 14.sp, // Slightly smaller stars
                         ),
                       ),
                     ),
-                    const SizedBox(width: 4),
-                    const Expanded(
+                    SizedBox(width: 4.w),
+                    Expanded(
                       child: Text(
                         '4.3 (124 reviews)',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: AppColors.textSecondary,
-                        ),
+                        style: AppTextStyles.bodySmall,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ],
                 ),
               ),
-              const Text(
+              Text(
                 '\$24.99',
                 style: AppTextStyles.price,
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           
           // Description
           _buildExpandableSection(
@@ -108,7 +103,7 @@ class ProductInfoSection extends StatelessWidget {
               style: AppTextStyles.bodyLarge.copyWith(height: 1.5),
             ),
           ),
-          const SizedBox(height: 16),
+          SizedBox(height: 16.h),
           
           // Ingredients
           _buildExpandableSection(
@@ -127,7 +122,7 @@ class ProductInfoSection extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
           
           // Type and Weight Selectors
           Row(
@@ -135,50 +130,49 @@ class ProductInfoSection extends StatelessWidget {
               // Type Selector
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.r),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.02),
                         blurRadius: 10,
-                        offset: const Offset(0, 4),
+                        offset: Offset(0, 4),
                       ),
                     ],
                   ),
                   child: Column(
                     children: [
-                      const Icon(Icons.grass, color: AppColors.chipUnselectedText),
-                      const SizedBox(height: 8),
+                      Icon(Icons.grass, color: AppColors.chipUnselectedText),
+                      SizedBox(height: 8.h),
                       Text(
                         'TYPE',
                         style: AppTextStyles.bodyMedium.copyWith(fontSize: 10),
                       ),
-                      const Text(
+                      Text(
                         'Dry Food',
-                        style: TextStyle(
+                        style: AppTextStyles.labelLarge.copyWith(
                           color: AppColors.chipUnselectedText,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
+              SizedBox(width: 16.w),
               // Weight Selector
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.r),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.02),
                         blurRadius: 10,
-                        offset: const Offset(0, 4),
+                        offset: Offset(0, 4),
                       ),
                     ],
                   ),
@@ -186,8 +180,8 @@ class ProductInfoSection extends StatelessWidget {
                     builder: (context, state) {
                       return Column(
                         children: [
-                          const Icon(Icons.scale, color: AppColors.primary),
-                          const SizedBox(height: 8),
+                          Icon(Icons.scale, color: AppColors.primary),
+                          SizedBox(height: 8.h),
                           Text(
                             'WEIGHT',
                             style: AppTextStyles.bodyMedium.copyWith(fontSize: 10),
@@ -197,13 +191,11 @@ class ProductInfoSection extends StatelessWidget {
                               isExpanded: true,
                               value: state.selectedWeight,
                               isDense: true,
-                              icon: const Icon(Icons.keyboard_arrow_down, size: 16),
-                              style: const TextStyle(
-                                color: AppColors.primary,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13,
-                                fontFamily: 'Inter',
-                              ),
+                              icon: Icon(Icons.keyboard_arrow_down, size: 16.sp),
+                                style: AppTextStyles.bodyMedium.copyWith(
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               onChanged: (String? newValue) {
                                 if (newValue != null) {
                                   context.read<ProductDetailsCubit>().selectWeight(newValue);
@@ -226,7 +218,7 @@ class ProductInfoSection extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
         ],
       ),
     );
@@ -234,16 +226,15 @@ class ProductInfoSection extends StatelessWidget {
 
   Widget _buildIngredientChip(String label) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: AppColors.chipUnselectedBg,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       child: Text(
         label,
-        style: const TextStyle(
+        style: AppTextStyles.bodySmall.copyWith(
           color: AppColors.chipUnselectedText,
-          fontSize: 12,
           fontWeight: FontWeight.w500,
         ),
       ),
@@ -258,8 +249,8 @@ class ProductInfoSection extends StatelessWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFFF9F9F9), // Light background
-        borderRadius: BorderRadius.circular(20),
+        color: Colors.white, // Light background
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: Colors.black.withOpacity(0.05)),
       ),
       child: Theme(
@@ -270,12 +261,13 @@ class ProductInfoSection extends StatelessWidget {
           collapsedIconColor: AppColors.textSecondary,
           title: Text(
             title,
-            style: AppTextStyles.titleMedium,
+            style: AppTextStyles.headlineSmall,
           ),
-          childrenPadding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          childrenPadding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 16.h),
           children: [child],
         ),
       ),
     );
   }
 }
+

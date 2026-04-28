@@ -1,29 +1,36 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_text_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/routing/app_routes.dart';
 import 'package:pawfy_app/core/routing/app_router.dart';
+
 void main() {
-  runApp(const PawfyApp());
+  runApp(PawfyApp());
 }
 
 class PawfyApp extends StatelessWidget {
-  const PawfyApp({super.key});
+  PawfyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pawfy App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.backgroundColor,
-        fontFamily: 'Inter',
-      ),
-      // home: const CategoryScreen(),
-      //home: LoginView(),
-      onGenerateRoute: AppRouter.onGenerateRoute,
-      initialRoute: AppRoutes.splash,
-      //SplashView(),
-    
+    return ScreenUtilInit(
+      designSize: Size(412, 915),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'Pawfy App',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            scaffoldBackgroundColor: AppColors.background,
+            fontFamily: 'Inter',
+            textTheme: AppTypographyTheme.textTheme,
+          ),
+          onGenerateRoute: AppRouter.onGenerateRoute,
+          initialRoute: AppRoutes.splash,
+        );
+      },
     );
   }
 }

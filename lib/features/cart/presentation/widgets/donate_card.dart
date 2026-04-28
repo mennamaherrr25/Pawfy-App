@@ -1,36 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DonateCard extends StatelessWidget {
-  const DonateCard({super.key});
+  DonateCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      margin: EdgeInsets.symmetric(vertical: 6.h, horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: AppTextColors.cardBg,
-        borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: AppTextColors.divider),
+        color: AppColors.card,
+        borderRadius: BorderRadius.circular(18.r),
+        border: Border.all(color: AppColors.divider),
       ),
       child: Row(
         children: [
           Container(
-            width: 44,
-            height: 44,
+            width: 44.w,
+            height: 44.h,
             decoration: BoxDecoration(
               color: AppColors.accentColor.withAlpha(50),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12.r),
             ),
-            child: const Center(
+            child: Center(
               child: Text('🐶', style: TextStyle(fontSize: 22)),
             ),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: 12.w),
 
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -38,7 +39,7 @@ class DonateCard extends StatelessWidget {
                   'Add a small gift for a shelter pet?',
                   style: AppTextStyles.donateTitle,
                 ),
-                SizedBox(height: 3),
+                SizedBox(height: 3.h),
                 Text(
                   'Your contribution supports\nlocal rescue shelters.',
                   style: AppTextStyles.donateSubtitle,
@@ -46,15 +47,15 @@ class DonateCard extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10.w),
 
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 9.h),
             decoration: BoxDecoration(
-              color: AppColors.primaryColor,
-              borderRadius: BorderRadius.circular(10),
+              color: AppColors.primary,
+              borderRadius: BorderRadius.circular(10.r),
             ),
-            child: const Text(
+            child: Text(
               'Add',
               style: TextStyle(
                 fontSize: 13,

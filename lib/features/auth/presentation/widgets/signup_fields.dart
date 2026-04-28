@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
 import 'package:pawfy_app/core/widgets/custom_text_form_field.dart';
 import 'package:pawfy_app/core/widgets/custom_text_widget.dart';
 
 class SignUpFields extends StatelessWidget {
-  const SignUpFields({
+  SignUpFields({
     super.key,
   });
 
@@ -14,17 +15,17 @@ class SignUpFields extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 8, left: 12),
+          padding: EdgeInsets.only(bottom: 8.h, left: 12.w),
           child: CustomTextWidget(
             text: 'Full NAME',
             style: AppTextStyles.s14rw600Inter(),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 24),
+          padding: EdgeInsets.only(bottom: 24.h),
           child: CustomTextFormField(
             hint: Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding: EdgeInsets.only(left: 8.w),
               child: CustomTextWidget(
                 text: 'Enter your name',
                 style: AppTextStyles.s14rw400Inter(),
@@ -32,19 +33,18 @@ class SignUpFields extends StatelessWidget {
             ),
           ),
         ),
-                
         Padding(
-          padding: const EdgeInsets.only(bottom: 8, left: 12),
+          padding: EdgeInsets.only(bottom: 8.h, left: 12.w),
           child: CustomTextWidget(
             text: 'Email',
             style: AppTextStyles.s14rw600Inter(),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 24),
+          padding: EdgeInsets.only(bottom: 24.h),
           child: CustomTextFormField(
             hint: Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding: EdgeInsets.only(left: 8.w),
               child: CustomTextWidget(
                 text: 'hello@mypet.com',
                 style: AppTextStyles.s14rw400Inter(),
@@ -52,13 +52,12 @@ class SignUpFields extends StatelessWidget {
             ),
           ),
         ),
-                
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                left: 12,
-                bottom: 8,
+              padding: EdgeInsets.only(
+                left: 12.w,
+                bottom: 8.h,
               ),
               child: CustomTextWidget(
                 text: 'PASSWORD',
@@ -69,10 +68,10 @@ class SignUpFields extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 24),
+          padding: EdgeInsets.only(bottom: 24.h),
           child: CustomTextFormField(
             hint: Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding: EdgeInsets.only(left: 8.w),
               child: CustomTextWidget(
                 text: 'Min. 8 characters',
                 style: AppTextStyles.s14rw400Inter(),
@@ -81,17 +80,17 @@ class SignUpFields extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 8, left: 12),
+          padding: EdgeInsets.only(bottom: 8.h, left: 12.w),
           child: CustomTextWidget(
             text: 'PHONE NUMBER',
             style: AppTextStyles.s14rw600Inter(),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 24),
+          padding: EdgeInsets.only(bottom: 24.h),
           child: CustomTextFormField(
             hint: Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding: EdgeInsets.only(left: 8.w),
               child: CustomTextWidget(
                 text: '+20 10 0000 0000',
                 style: AppTextStyles.s14rw400Inter(),

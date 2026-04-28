@@ -5,7 +5,7 @@ class ProductDetailsState extends Equatable {
   final String selectedWeight;
   final bool isFavorite;
 
-  const ProductDetailsState({
+  ProductDetailsState({
     this.quantity = 1,
     this.selectedWeight = '4 lbs (1.8kg)',
     this.isFavorite = false,

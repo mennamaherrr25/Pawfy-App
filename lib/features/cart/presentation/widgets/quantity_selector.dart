@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class QuantitySelector extends StatelessWidget {
   final int quantity;
 
-  const QuantitySelector({super.key, this.quantity = 1});
+  QuantitySelector({super.key, this.quantity = 1});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 32,
+      height: 32.h,
       decoration: BoxDecoration(
-        color: AppTextColors.qtyBg,
-        borderRadius: BorderRadius.circular(10),
+        color: AppColors.quantityBg,
+        borderRadius: BorderRadius.circular(10.r),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           _QtyBtn(icon: Icons.remove),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14),
+            padding: EdgeInsets.symmetric(horizontal: 14.w),
             child: Text(
               '$quantity',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w700,
                 color: AppColors.textPrimary,
@@ -43,13 +44,14 @@ class _QtyBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 32,
-      height: 32,
+      width: 32.w,
+      height: 32.h,
       decoration: BoxDecoration(
-        color: AppColors.primaryColor.withAlpha(30),
-        borderRadius: BorderRadius.circular(10),
+        color: AppColors.primary.withAlpha(30),
+        borderRadius: BorderRadius.circular(10.r),
       ),
-      child: Icon(icon, size: 16, color: AppColors.primaryColor),
+      child: Icon(icon, size: 16.sp, color: AppColors.primary),
     );
   }
 }
+

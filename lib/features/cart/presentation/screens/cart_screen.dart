@@ -6,25 +6,31 @@ import 'package:pawfy_app/features/cart/presentation/widgets/donate_card.dart';
 import 'package:pawfy_app/features/cart/presentation/widgets/order_summary.dart';
 import 'package:pawfy_app/features/home/presentation/widgets/home_app_bar.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// =========================================================
+/// 🛒 CartScreen - Shopping Basket
+/// =========================================================
+/// Manages the user's selected products, showing items, quantities, 
+/// and order summary. Includes a checkout flow and donation options.
 class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+  CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.background,
       body: SafeArea(
         bottom: false,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           child: Column(
             children: [
-              const HomeAppBar(),
+              HomeAppBar(),
               Expanded(
                 child: ListView(
-                  padding: const EdgeInsets.only(bottom: 100),
-                  children: const [
+                  padding: EdgeInsets.only(bottom: 100.h),
+                  children: [
                     CartHeader(itemCount: 3, isPriority: true),
                     CartItemCard(
                       name: 'Organic Lavender Shampoo',

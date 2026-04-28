@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderSummary extends StatelessWidget {
   final double subtotal;
   final bool freeShipping;
   final double total;
 
-  const OrderSummary({
+  OrderSummary({
     super.key,
     required this.subtotal,
     required this.total,
@@ -17,17 +18,17 @@ class OrderSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-      padding: const EdgeInsets.all(18),
+      margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+      padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
-        color: AppTextColors.cardBg,
-        borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: AppTextColors.divider),
+        color: AppColors.card,
+        borderRadius: BorderRadius.circular(28.r),
+        border: Border.all(color: AppColors.divider),
       ),
       child: Column(
         children: [
           _Row(label: 'Subtotal', value: '\$${subtotal.toStringAsFixed(2)}'),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           _Row(
             label: 'Shipping',
             value: freeShipping
@@ -35,14 +36,14 @@ class OrderSummary extends StatelessWidget {
                 : '\$${(total - subtotal).toStringAsFixed(2)}',
             valueColor: freeShipping ? AppColors.accentColor : null,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 14),
-            child: Divider(color: AppTextColors.divider, height: 1),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 14.h),
+            child: Divider(color: AppColors.divider, height: 1.h),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Total', style: AppTextStyles.totalLabel),
+              Text('Total', style: AppTextStyles.totalLabel),
               Text(
                 '\$${total.toStringAsFixed(2)}',
                 style: AppTextStyles.totalValue,

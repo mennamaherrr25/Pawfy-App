@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
+  CustomButton({
     super.key,
     required this.onPressed,
     required this.textWidget,
@@ -14,9 +15,14 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 64,
+      height: 64.h,
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(backgroundColor: backgroundColor),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.r),
+          ),
+        ),
         onPressed: onPressed,
         child: textWidget,
       ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/routing/app_routes.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
 import 'package:pawfy_app/core/widgets/custom_text_widget.dart';
 
 class SplashView extends StatefulWidget {
-  const SplashView({super.key});
+  SplashView({super.key});
 
   @override
   State<SplashView> createState() => _SplashViewState();
@@ -23,7 +24,7 @@ class _SplashViewState extends State<SplashView>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: Duration(milliseconds: 1200),
     );
 
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
@@ -35,15 +36,10 @@ class _SplashViewState extends State<SplashView>
 
     _controller.forward();
 
-    // Navigation بعد 2.5 ثانية
-
-    // _controller.addStatusListener((status) {
-    //   if (status == AnimationStatus.completed) {
-    //     Navigator.pushReplacementNamed(context, AppRoutes.onboarding);
-    //   }
-    // });
-    Future.delayed(const Duration(milliseconds: 2500), () {
-      Navigator.pushReplacementNamed(context, AppRoutes.onboarding);
+    Future.delayed(Duration(milliseconds: 2500), () {
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, AppRoutes.onboarding);
+      }
     });
   }
 
@@ -59,9 +55,9 @@ class _SplashViewState extends State<SplashView>
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppColors.lightpurple, AppColors.primaryColor],
+            colors: [AppColors.primaryLight, AppColors.primary],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -74,9 +70,9 @@ class _SplashViewState extends State<SplashView>
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/paw.png", width: 120),
+                  Image.asset("assets/paw.png", width: 120.w),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
+                    padding: EdgeInsets.only(top: 8.h),
                     child: CustomTextWidget(
                       text: 'Pawfy',
                       style: AppTextStyles.s30bold().copyWith(

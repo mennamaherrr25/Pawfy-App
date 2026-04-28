@@ -1,7 +1,7 @@
 // import 'package:flutter/material.dart';
 
 // class OnboardingView extends StatelessWidget {
-//   const OnboardingView({super.key});
+//   OnboardingView({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -9,6 +9,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/routing/app_routes.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
@@ -17,7 +18,7 @@ import 'package:pawfy_app/features/on_boarding/presentation/views/onboarding2.da
 import 'package:pawfy_app/features/on_boarding/presentation/views/onboarding1.dart';
 
 class OnboardingView extends StatefulWidget {
-  const OnboardingView({super.key});
+  OnboardingView({super.key});
 
   @override
   State<OnboardingView> createState() => _OnboardingViewState();
@@ -25,7 +26,7 @@ class OnboardingView extends StatefulWidget {
 
 class _OnboardingViewState extends State<OnboardingView> {
   final PageController _pageController = PageController();
-  int _currentPage = 0; // ✅ بيتتبع الصفحة الحالية
+  int _currentPage = 0;
 
   @override
   void dispose() {
@@ -35,59 +36,50 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColors.primaryColor,
+      backgroundColor: AppColors.primary,
       body: Stack(
         children: [
-          // ✅ الـ PageView
           PageView(
             controller: _pageController,
             onPageChanged: (index) {
               setState(() {
-                _currentPage = index; // ✅ بيتحدث كل ما تتغير الصفحة
+                _currentPage = index;
               });
             },
             children: [OnboardingPage1(), OnboardingPage2()],
           ),
-
-          // ✅ الـ Dot Indicator
           Positioned(
-            bottom: h * 0.19,
-            left: 0,
-            right: 0,
+            bottom: 170.h,
+            left: 0.w,
+            right: 0.w,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                2, // عدد الصفحات
-                (index) => Container(
-                  margin: EdgeInsets.symmetric(horizontal: 4),
-                  width: index == _currentPage ? 24 : 8, // ✅ الـ active أكبر
-                  height: 8,
+                2,
+                (index) => AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  margin: EdgeInsets.symmetric(horizontal: 4.w),
+                  width: index == _currentPage ? 24.w : 8.w,
+                  height: 8.h,
                   decoration: BoxDecoration(
                     color: index == _currentPage
-                        ? AppColors.backgroundColor
+                        ? AppColors.background
                         : Colors.white70.withValues(alpha: .2),
-
-                    borderRadius: BorderRadius.circular(99),
+                    borderRadius: BorderRadius.circular(99.r),
                   ),
                 ),
               ),
             ),
           ),
-
-          SizedBox(height: 50),
-
-          // ✅ زرار Next
           Positioned(
-            bottom: h * 0.081,
-            left: 0,
-            right: 0,
+            bottom: 74.h,
+            left: 0.w,
+            right: 0.w,
             child: Center(
               child: SizedBox(
-                width: 276,
-                height: 64,
+                width: 276.w,
+                height: 64.h,
                 child: CustomButton(
                   currentPage: _currentPage,
                   pageController: _pageController,
@@ -95,7 +87,6 @@ class _OnboardingViewState extends State<OnboardingView> {
               ),
             ),
           ),
-          SizedBox(height: 30),
         ],
       ),
     );
@@ -103,12 +94,12 @@ class _OnboardingViewState extends State<OnboardingView> {
 }
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
+  CustomButton({
     super.key,
     required int currentPage,
     required PageController pageController,
-  }) : _currentPage = currentPage,
-       _pageController = pageController;
+  })  : _currentPage = currentPage,
+        _pageController = pageController;
 
   final int _currentPage;
   final PageController _pageController;
@@ -116,6 +107,11 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+      ),
       onPressed: () {
         if (_currentPage == 1) {
           Navigator.pushReplacementNamed(context, AppRoutes.login);
@@ -129,11 +125,9 @@ class CustomButton extends StatelessWidget {
       child: CustomTextWidget(
         text: _currentPage == 1 ? 'Get Started' : 'Next',
         style: AppTextStyles.s18rPlaypenSans().copyWith(
-          color: AppColors.primaryColor,
+          color: AppColors.primary,
         ),
       ),
-
-      //Text(_currentPage == 1 ? 'Get Started' : 'Next'),
     );
   }
 }

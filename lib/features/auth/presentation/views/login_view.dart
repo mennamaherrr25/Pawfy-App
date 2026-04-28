@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/routing/app_routes.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
@@ -10,8 +11,13 @@ import 'package:pawfy_app/features/auth/presentation/widgets/auth_header.dart';
 import 'package:pawfy_app/features/auth/presentation/widgets/social_login_button.dart';
 import 'package:pawfy_app/features/auth/presentation/widgets/divider_with_text.dart.dart';
 
+/// =========================================================
+/// 🔐 LoginView - Authentication Portal
+/// =========================================================
+/// Handles user login, providing fields for credentials and 
+/// social login options. Optimized for better UX and responsiveness.
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+  LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +28,7 @@ class LoginView extends StatelessWidget {
           child: Center(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18),
+                padding: EdgeInsets.symmetric(horizontal: 18.w),
                 child: LoginBody(),
               ),
             ),
@@ -34,7 +40,7 @@ class LoginView extends StatelessWidget {
 }
 
 class LoginBody extends StatelessWidget {
-  const LoginBody({super.key});
+  LoginBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,24 +61,24 @@ class LoginBody extends StatelessWidget {
                 text: 'Login',
                 style: AppTextStyles.s18rPlaypenSans().copyWith(
                   fontFamily: 'Inter',
+                  color: Colors.white,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8),
+                padding: EdgeInsets.only(left: 8.w),
                 child: Icon(Icons.start, color: Colors.white),
               ),
             ],
           ),
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: AppColors.primaryLight,
         ),
-
         Padding(
-          padding: const EdgeInsets.only(top: 24, bottom: 24),
+          padding: EdgeInsets.symmetric(vertical: 24.h),
           child: DividerWithText(text: 'OR CONTINUE WITH'),
         ),
         SocialLoginButton(),
         Padding(
-          padding: const EdgeInsets.only(top: 30, bottom: 40),
+          padding: EdgeInsets.only(top: 30.h, bottom: 40.h),
           child: AuthFooter(
             onPressed: () {
               Navigator.pushNamed(context, AppRoutes.signup);

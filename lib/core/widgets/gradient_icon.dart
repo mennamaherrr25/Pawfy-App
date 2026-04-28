@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 
 class GradientIcon extends StatelessWidget {
-  const GradientIcon({super.key, required this.icon});
+  GradientIcon({super.key, required this.icon});
   final FaIcon icon;
 
   @override
@@ -13,7 +13,7 @@ class GradientIcon extends StatelessWidget {
         return LinearGradient(
           colors: [
             AppColors.secondaryColor,
-            AppColors.primaryColor,
+            AppColors.primary,
             AppColors.accentColor,
           ],
           begin: Alignment.topLeft,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, this.hint, this.prefixIcon});
+  CustomTextFormField({super.key, this.hint, this.prefixIcon});
 
   final Widget? hint;
 
@@ -10,22 +11,21 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: AppColors.primaryColor,
+      cursorColor: AppColors.primary,
       decoration: InputDecoration(
-        //  contentPadding: EdgeInsets.only(bottom: ,top: ,left: ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         prefixIcon: prefixIcon,
-        //prefixIconColor:prefixIconColor ,
-        hint: hint,
+        label: hint,
         filled: true,
         fillColor: Colors.white,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(999),
-          borderSide: BorderSide(color: AppColors.primaryColor),
+          borderRadius: BorderRadius.circular(999.r),
+          borderSide: BorderSide(color: AppColors.primary),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(999),
+          borderRadius: BorderRadius.circular(999.r),
           borderSide: BorderSide(
-            color: AppTextColors.secondaryText.withValues(alpha: .1),
+            color: AppColors.secondaryText.withValues(alpha: .1),
           ),
         ),
       ),

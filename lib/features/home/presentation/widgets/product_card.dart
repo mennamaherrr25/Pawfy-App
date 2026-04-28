@@ -1,5 +1,5 @@
-// lib/features/home/presentation/widgets/product_card.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 
 class ProductCard extends StatelessWidget {
@@ -8,7 +8,7 @@ class ProductCard extends StatelessWidget {
   final String price;
   final String imagePath;
 
-  const ProductCard({
+  ProductCard({
     super.key,
     required this.title,
     required this.subtitle,
@@ -18,34 +18,34 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 170,
+    return SizedBox(
+      width: 170.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
-              image: DecorationImage(
-                image: AssetImage(imagePath),
-                fit: BoxFit.cover,
+            Container(
+              height: 150.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.r),
+                color: Colors.grey[200], // Placeholder color instead of failing asset
               ),
-            ),
-            child: Stack(
-              children: [
+              child: Stack(
+                children: [
+                  Center(
+                    child: Icon(Icons.pets, size: 40, color: Colors.black12),
+                  ),
                 Positioned(
-                  bottom: 8,
-                  right: 8,
+                  bottom: 8.h,
+                  right: 8.w,
                   child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: const BoxDecoration(
+                    padding: EdgeInsets.all(8.r),
+                    decoration: BoxDecoration(
                       color: Color(0xFFADF3B1),
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.add_shopping_cart,
-                      size: 16,
+                      size: 16.sp,
                       color: Colors.black87,
                     ),
                   ),
@@ -54,37 +54,37 @@ class ProductCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 12, left: 4, right: 4),
+            padding: EdgeInsets.only(top: 12.h, left: 4.w, right: 4.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
-                    fontSize: 13,
+                  style: TextStyle(
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
                     color: Color(0xFF333333),
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4.h),
                 Text(
                   subtitle,
-                  style: const TextStyle(
-                    fontSize: 11,
+                  style: TextStyle(
+                    fontSize: 11.sp,
                     color: Color(0xFF7A7A7A),
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Text(
                   price,
-                  style: const TextStyle(
-                    fontSize: 14,
+                  style: TextStyle(
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.primaryColor,
+                    color: AppColors.primary,
                   ),
                 ),
               ],

@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../view_model/product_details_cubit.dart';
 import '../../view_model/product_details_state.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductHeaderImage extends StatelessWidget {
-  const ProductHeaderImage({Key? key}) : super(key: key);
+  ProductHeaderImage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class ProductHeaderImage extends StatelessWidget {
         Container(
           height: screenHeight * 0.33,
           width: double.infinity,
-          padding: const EdgeInsets.only(top: 80, bottom: 20, left: 40, right: 40),
+          padding: EdgeInsets.only(top: 80.h, bottom: 20.h, left: 40.w, right: 40.w),
           child: Image.asset(
             AppImages.productImage,
             fit: BoxFit.contain,
@@ -28,8 +29,8 @@ class ProductHeaderImage extends StatelessWidget {
         // Top Overlay Icons (Back, Share, Favorite)
         Positioned(
           top: MediaQuery.of(context).padding.top + 16,
-          left: 16,
-          right: 16,
+          left: 16.w,
+          right: 16.w,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -47,7 +48,7 @@ class ProductHeaderImage extends StatelessWidget {
                       // Handle share
                     },
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12.w),
                   BlocBuilder<ProductDetailsCubit, ProductDetailsState>(
                     builder: (context, state) {
                       return _buildCircleButton(
@@ -76,7 +77,7 @@ class ProductHeaderImage extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: EdgeInsets.all(8.r),
         decoration: BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
@@ -84,16 +85,17 @@ class ProductHeaderImage extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.05),
               blurRadius: 10,
-              offset: const Offset(0, 4),
+              offset: Offset(0, 4),
             ),
           ],
         ),
         child: Icon(
           icon,
           color: iconColor,
-          size: 20,
+          size: 20.sp,
         ),
       ),
     );
   }
 }
+

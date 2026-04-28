@@ -1,57 +1,56 @@
-// lib/features/home/presentation/widgets/best_sellers_section.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
+import 'package:pawfy_app/core/theme/app_text_styles.dart';
 import 'package:pawfy_app/features/home/presentation/widgets/product_card.dart';
 
 class BestSellersSection extends StatelessWidget {
-  const BestSellersSection({super.key});
+  BestSellersSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'TOP RATED',
-                  style: TextStyle(
-                    fontSize: 10,
-                    letterSpacing: 1.2,
-                    color: AppColors.primaryColor,
-                    fontWeight: FontWeight.w700,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'TOP RATED',
+                    style: AppTextStyles.bodySmall.copyWith(
+                      letterSpacing: 1.2,
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                Text(
-                  'Best Sellers',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                  Text(
+                    'Best Sellers',
+                    style: AppTextStyles.headlineLarge.copyWith(
+                      color: Colors.black87,
+                    ),
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Text(
               'See All',
-              style: TextStyle(
-                fontSize: 14,
-                color: AppColors.primaryColor,
-                fontWeight: FontWeight.w500,
+              style: AppTextStyles.labelLarge.copyWith(
+                color: AppColors.primary,
               ),
             ),
           ],
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: 20.h),
         SizedBox(
-          height: 240,
+          height: 280.h,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: const [
+            children: [
               ProductCard(
                 title: 'Premium Dry Kibble',
                 subtitle: 'Organic Grain-Free',
@@ -59,7 +58,7 @@ class BestSellersSection extends StatelessWidget {
                 imagePath:
                     'assets/images/products/AB6AXuCpYDI89GqDFYasoqlmYmGWvmr284wm5b-AuQFOGnN3zos_CGDox-Xcyk6-_ddpHEBAcN1Mn7CnRsd4ErC7Z-lZcOrYr9LVRdO_65VaGXHGkB67szknQg1bLJygCBF7bqW3W42EWe5uEJk4n575bp2Adomz6jfsAEcTlxUFxGlabrzxOr_v1BOQSo26LzPMDlUTdS0.png',
               ),
-              SizedBox(width: 15),
+              SizedBox(width: 15.w),
               ProductCard(
                 title: 'Tough Rope',
                 subtitle: 'Indestructible',

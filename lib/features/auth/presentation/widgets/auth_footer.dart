@@ -5,7 +5,7 @@ import 'package:pawfy_app/core/widgets/custom_text_widget.dart';
 
 /// name for the last component of a view
 class AuthFooter extends StatelessWidget {
-  const AuthFooter({
+  AuthFooter({
     super.key,
     required this.onPressed,
     required this.buttonText,
@@ -31,7 +31,7 @@ class AuthFooter extends StatelessWidget {
           shaderCallback: (Rect bounds) => LinearGradient(
             colors: [
               AppColors.secondaryColor,
-              AppColors.primaryColor,
+              AppColors.primary,
               AppColors.accentColor,
             ],
             begin: Alignment.topLeft,
@@ -44,7 +44,7 @@ class AuthFooter extends StatelessWidget {
               style:
                   buttonTextStyle ??
                   AppTextStyles.s14rw600Inter().copyWith(
-                    color: AppColors.primaryColor,
+                    color: AppColors.primary,
                   ),
             ),
           ),
@@ -56,7 +56,7 @@ class AuthFooter extends StatelessWidget {
           //     style:
           //         buttonTextStyle ??
           //         AppTextStyles.s14rw600Inter().copyWith(
-          //           color: AppColors.primaryColor,
+          //           color: AppColors.primary,
           //         ),
           //   ),
           // ),

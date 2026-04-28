@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileMenuItem extends StatelessWidget {
   final IconData icon;
@@ -7,7 +8,7 @@ class ProfileMenuItem extends StatelessWidget {
   final Color iconColor;
   final VoidCallback onTap;
 
-  const ProfileMenuItem({
+  ProfileMenuItem({
     super.key,
     required this.icon,
     required this.title,
@@ -21,16 +22,16 @@ class ProfileMenuItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 16),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        margin: EdgeInsets.only(bottom: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(24.r),
         ),
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
                 color: iconBackgroundColor,
                 shape: BoxShape.circle,
@@ -38,21 +39,21 @@ class ProfileMenuItem extends StatelessWidget {
               child: Icon(
                 icon,
                 color: iconColor,
-                size: 24,
+                size: 24.sp,
               ),
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: 16.w),
             Expanded(
               child: Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Color(0xFF4A4E38),
                 ),
               ),
             ),
-            const Icon(
+            Icon(
               Icons.chevron_right,
               color: Color(0xFFC0C5AD),
             ),
@@ -62,3 +63,4 @@ class ProfileMenuItem extends StatelessWidget {
     );
   }
 }
+

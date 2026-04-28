@@ -3,6 +3,7 @@ import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
 
 import 'quantity_selector.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartItemCard extends StatelessWidget {
   final String name;
@@ -12,7 +13,7 @@ class CartItemCard extends StatelessWidget {
   final String emoji;
   final String? badge;
 
-  const CartItemCard({
+  CartItemCard({
     super.key,
     required this.name,
     required this.subtitle,
@@ -24,75 +25,78 @@ class CartItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-      decoration: BoxDecoration(
-        color: AppTextColors.cardBg,
-        borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: AppTextColors.divider),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _Thumbnail(emoji: emoji, badge: badge),
-            const SizedBox(width: 14),
+    return RepaintBoundary(
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
+        decoration: BoxDecoration(
+          color: AppColors.card,
+          borderRadius: BorderRadius.circular(28.r),
+          border: Border.all(color: AppColors.divider),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(14.r),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _Thumbnail(emoji: emoji, badge: badge),
+              SizedBox(width: 14.w),
 
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(name, style: AppTextStyles.itemName),
-                            const SizedBox(height: 2),
-                            Text(subtitle, style: AppTextStyles.itemSubtitle),
-                          ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(name, style: AppTextStyles.itemName),
+                              SizedBox(height: 2.h),
+                              Text(subtitle, style: AppTextStyles.itemSubtitle),
+                            ],
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        '\$${(price * quantity).toStringAsFixed(2)}',
-                        style: AppTextStyles.itemPrice,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      QuantitySelector(quantity: quantity),
+                        SizedBox(width: 8.w),
+                        Text(
+                          '\$${(price * quantity).toStringAsFixed(2)}',
+                          style: AppTextStyles.itemPrice,
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 12.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        QuantitySelector(quantity: quantity),
 
-                      Container(
-                        width: 32,
-                        height: 32,
-                        decoration: BoxDecoration(
-                          color:AppTextColors.removeRed.withAlpha(30),
-                          borderRadius: BorderRadius.circular(8),
+                        Container(
+                          width: 32.w,
+                          height: 32.h,
+                          decoration: BoxDecoration(
+                            color:AppColors.error.withAlpha(30),
+                            borderRadius: BorderRadius.circular(8.r),
+                          ),
+                          child: Icon(
+                            Icons.delete_outline_rounded,
+                            size: 16.sp,
+                            color: AppColors.error,
+                          ),
                         ),
-                        child: const Icon(
-                          Icons.delete_outline_rounded,
-                          size: 16,
-                          color: AppTextColors.removeRed,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 
 // ── Sub-widget: Thumbnail ────────────────────────────────────
 
@@ -108,14 +112,14 @@ class _Thumbnail extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          width: 72,
-          height: 72,
+          width: 72.w,
+          height: 72.h,
           decoration: BoxDecoration(
-            color: AppColors.backgroundColor,
-            borderRadius: BorderRadius.circular(14),
+            color: AppColors.background,
+            borderRadius: BorderRadius.circular(14.r),
           ),
           child: Center(
-            child: Text(emoji, style: const TextStyle(fontSize: 34)),
+            child: Text(emoji, style: TextStyle(fontSize: 34)),
           ),
         ),
         if (badge != null)
@@ -123,14 +127,14 @@ class _Thumbnail extends StatelessWidget {
             top: -6,
             right: -6,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
               decoration: BoxDecoration(
-                color: AppTextColors.badgeSale,
-                borderRadius: BorderRadius.circular(6),
+                color: AppColors.sale,
+                borderRadius: BorderRadius.circular(6.r),
               ),
               child: Text(
                 badge!,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 9,
                   fontWeight: FontWeight.w800,
                   color: Colors.white,
@@ -143,3 +147,4 @@ class _Thumbnail extends StatelessWidget {
     );
   }
 }
+

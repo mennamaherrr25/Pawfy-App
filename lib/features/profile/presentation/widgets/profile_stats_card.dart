@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileStatsCard extends StatelessWidget {
   final String count;
   final String label;
   final Color countColor;
 
-  const ProfileStatsCard({
+  ProfileStatsCard({
     super.key,
     required this.count,
     required this.label,
@@ -15,10 +16,10 @@ class ProfileStatsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 24),
+      padding: EdgeInsets.symmetric(vertical: 24.h),
       decoration: BoxDecoration(
-        color: const Color(0xFFF7F8E3),
-        borderRadius: BorderRadius.circular(24),
+        color: Color(0xFFF7F8E3),
+        borderRadius: BorderRadius.circular(24.r),
       ),
       child: Column(
         children: [
@@ -30,10 +31,10 @@ class ProfileStatsCard extends StatelessWidget {
               color: countColor,
             ),
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Text(
             label,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w700,
               color: Color(0xFF6B705C),

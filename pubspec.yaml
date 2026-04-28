@@ -38,6 +38,7 @@ dependencies:
 
   flutter_bloc: ^9.1.1
   equatable: ^2.0.8
+  flutter_screenutil: ^5.9.3
 
 # flutter_native_splash:
 #     image: assets/play_store_512.png

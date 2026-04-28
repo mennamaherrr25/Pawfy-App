@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+/// 📦 ProductItem - Data model representing a single pet product.
 class ProductItem extends Equatable {
   final String id;
   final String name;
@@ -19,6 +20,7 @@ class ProductItem extends Equatable {
   List<Object?> get props => [id, name, weight, price, tag];
 }
 
+/// 📊 CategoryState - State management for the product catalog.
 class CategoryState extends Equatable {
   final String searchQuery;
   final String selectedFilter;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pawfy_app/core/theme/app_text_styles.dart';
 import 'package:pawfy_app/core/widgets/app_logo.dart';
@@ -6,7 +7,7 @@ import 'package:pawfy_app/core/widgets/custom_text_widget.dart';
 import 'package:pawfy_app/core/widgets/gradient_icon.dart';
 
 class AuthHeader extends StatelessWidget {
-  const AuthHeader({
+  AuthHeader({
     super.key,
     required this.title,
     required this.subTitle,
@@ -22,12 +23,12 @@ class AuthHeader extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.center,
-          child: AppLogo(width: 60, height: 60),
+          child: AppLogo(width: 40.w, height: 40.h),
         ),
         Align(
           alignment: Alignment.center,
           child: Padding(
-            padding: const EdgeInsets.only(top: 8, bottom: 8),
+            padding: EdgeInsets.symmetric(vertical: 8.h),
             child: CustomTextWidget(
               text: title,
               style: AppTextStyles.s30bold(),
@@ -47,61 +48,17 @@ class AuthHeader extends StatelessWidget {
             ),
             if (showIcon!)
               Padding(
-                padding: const EdgeInsets.only(left: 6),
+                padding: EdgeInsets.only(left: 6.w),
                 child: GradientIcon(
                   icon: FaIcon(
                     FontAwesomeIcons.heart,
-                    size: 18,
+                    size: 18.sp,
                     color: Colors.white,
                   ),
                 ),
               ),
           ],
         ),
-        ///////////////////////////////
-        // RichText(
-        //  // textAlign: TextAlign.center,
-        //   text: TextSpan(
-        //     style: AppTextStyles.s16rInter(),
-        //     children: [
-        //       TextSpan(text: '$subTitle '),
-
-        //           WidgetSpan(
-        //             //alignment: PlaceholderAlignment.middle,
-        //             child: GradientIcon(
-        //               icon: FaIcon(
-        //                 FontAwesomeIcons.heart,
-        //                 size: 18,
-        //                 color: Colors.white,
-        //               ),
-        //             ),
-        //           ),
-
-        //     ],
-        //   ),
-        // ),
-        ///////////////////////////////////////////
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.center,
-        //   children: [
-        //     CustomTextWidget(
-        //       text: subTitle,
-        //       style: AppTextStyles.s16rInter(),
-        //       maxlines: 3,
-        //     ),
-
-        //     Padding(
-        //       padding: const EdgeInsets.only(left: 6),
-        //       child: GradientIcon(
-        //         icon: FaIcon(
-        //           FontAwesomeIcons.heart,
-        //           size: 20,
-        //           color: Colors.white,
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ],
     );
   }
