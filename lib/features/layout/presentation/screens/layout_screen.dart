@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/features/cart/presentation/screens/cart_screen.dart';
+import 'package:pawfy_app/features/favorite/presentation/views/favorite_view.dart';
 import 'package:pawfy_app/features/home/presentation/screens/home_screen.dart';
+
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
 
@@ -16,7 +18,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
     HomeScreen(),
     HomeScreen(),
     CartScreen(),
-    HomeScreen(),
+    FavouriteScreen(),
   ];
 
   @override
@@ -27,7 +29,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
       bottomNavigationBar: Container(
         margin: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
         decoration: BoxDecoration(
-          color: const Color(0xFFFBF9DC), 
+          color: const Color(0xFFFBF9DC),
           borderRadius: BorderRadius.circular(40),
           boxShadow: [
             BoxShadow(
@@ -45,8 +47,14 @@ class _LayoutScreenState extends State<LayoutScreen> {
             backgroundColor: AppColors.backgroundColor,
             selectedItemColor: AppColors.primaryColor,
             unselectedItemColor: const Color(0xFF7D8365),
-            selectedLabelStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
-            unselectedLabelStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
+            selectedLabelStyle: const TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w700,
+            ),
+            unselectedLabelStyle: const TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w600,
+            ),
             currentIndex: _selectedIndex,
             onTap: (index) {
               setState(() {
@@ -82,7 +90,11 @@ class _LayoutScreenState extends State<LayoutScreen> {
                     color: AppColors.primaryColor,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.category, color: Colors.white, size: 20),
+                  child: const Icon(
+                    Icons.category,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
                 label: 'Categories',
               ),
@@ -98,7 +110,11 @@ class _LayoutScreenState extends State<LayoutScreen> {
                     color: AppColors.primaryColor,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.shopping_cart, color: Colors.white, size: 20),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
                 label: 'Cart',
               ),
@@ -114,7 +130,11 @@ class _LayoutScreenState extends State<LayoutScreen> {
                     color: AppColors.primaryColor,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.person, color: Colors.white, size: 20),
+                  child: const Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
                 label: 'Profile',
               ),
