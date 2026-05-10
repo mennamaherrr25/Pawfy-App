@@ -35,12 +35,12 @@ class FavFilterChips extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isSelected
                     ? AppColors.primaryColor
-                    : AppColors.surface,
+                    : AppTextColors.surface,
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(
                   color: isSelected
                       ? AppColors.primaryColor
-                      : AppColors.divider,
+                      : AppTextColors.divider,
                 ),
               ),
               child: Text(
@@ -51,7 +51,7 @@ class FavFilterChips extends StatelessWidget {
                       isSelected ? FontWeight.w700 : FontWeight.w500,
                   color: isSelected
                       ? Colors.white
-                      : AppColors.textSecond,
+                      : AppTextColors.textSecond,
                 ),
               ),
             ),

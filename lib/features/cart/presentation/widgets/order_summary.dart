@@ -20,9 +20,9 @@ class OrderSummary extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: AppColors.cardBg,
+        color: AppTextColors.cardBg,
         borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: AppColors.divider),
+        border: Border.all(color: AppTextColors.divider),
       ),
       child: Column(
         children: [
@@ -37,7 +37,7 @@ class OrderSummary extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 14),
-            child: Divider(color: AppColors.divider, height: 1),
+            child: Divider(color: AppTextColors.divider, height: 1),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

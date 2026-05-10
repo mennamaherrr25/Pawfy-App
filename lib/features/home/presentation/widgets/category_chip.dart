@@ -1,6 +1,5 @@
 // lib/features/home/presentation/widgets/category_chip.dart
 import 'package:flutter/material.dart';
-import 'package:pawfy_app/core/constants/app_colors.dart';
 
 class CategoryChip extends StatelessWidget {
   final String label;

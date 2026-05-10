@@ -38,7 +38,7 @@ class FavSectionHeader extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
-                    color: AppColors.textSecond,
+                    color: AppTextColors.textSecond,
                   ),
                 ),
               ],
@@ -51,16 +51,16 @@ class FavSectionHeader extends StatelessWidget {
                 horizontal: 12.w, vertical: 6.h,
               ),
               decoration: BoxDecoration(
-                color: AppColors.surface,
+                color: AppTextColors.surface,
                 borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(color: AppColors.divider),
+                border: Border.all(color: AppTextColors.divider),
               ),
               child: Row(
                 children: [
                   Icon(
                     Icons.sort_rounded,
                     size: 14.r,
-                    color: AppColors.textSecond,
+                    color: AppTextColors.textSecond,
                   ),
                   SizedBox(width: 4.w),
                   Text(
@@ -68,7 +68,7 @@ class FavSectionHeader extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.textSecond,
+                      color: AppTextColors.textSecond,
                     ),
                   ),
                 ],

@@ -32,10 +32,7 @@ class SummerTreatsBanner extends StatelessWidget {
                 const SizedBox(height: 8),
                 const Text(
                   'Up to 30% off selected\norganic brands.',
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: Color(0xFF5A448A),
-                  ),
+                  style: TextStyle(fontSize: 11, color: Color(0xFF5A448A)),
                 ),
                 const SizedBox(height: 16),
                 GestureDetector(
@@ -43,7 +40,10 @@ class SummerTreatsBanner extends StatelessWidget {
                     // TODO: Navigate to products screen
                   },
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 10,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor,
                       borderRadius: BorderRadius.circular(30),

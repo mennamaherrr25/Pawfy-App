@@ -17,7 +17,7 @@ class FavEmptyState extends StatelessWidget {
             width: 100.w,
             height: 100.h,
             decoration: BoxDecoration(
-              color: AppColors.surface,
+              color: AppTextColors.surface,
               shape: BoxShape.circle,
             ),
             child: Center(

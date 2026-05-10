@@ -40,13 +40,17 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
                     IconButton(
-                      icon: const Icon(Icons.notifications_none, color: AppColors.primaryColor, size: 28),
+                      icon: const Icon(
+                        Icons.notifications_none,
+                        color: AppColors.primaryColor,
+                        size: 28,
+                      ),
                       onPressed: () {},
                     ),
                   ],
                 ),
                 const SizedBox(height: 30),
-                
+
                 Stack(
                   children: [
                     Container(
@@ -56,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withAlpha(30),
                             blurRadius: 10,
                             spreadRadius: 2,
                           ),
@@ -65,7 +69,11 @@ class ProfileScreen extends StatelessWidget {
                       child: const CircleAvatar(
                         radius: 50,
                         backgroundColor: Color(0xFF2A688D),
-                        child: Icon(Icons.person, size: 60, color: Color(0xFFFDE4D0)),
+                        child: Icon(
+                          Icons.person,
+                          size: 60,
+                          color: Color(0xFFFDE4D0),
+                        ),
                       ),
                     ),
                     Positioned(
@@ -76,7 +84,10 @@ class ProfileScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: AppColors.primaryColor,
                           shape: BoxShape.circle,
-                          border: Border.all(color: AppColors.backgroundColor, width: 2),
+                          border: Border.all(
+                            color: AppColors.backgroundColor,
+                            width: 2,
+                          ),
                         ),
                         child: const Icon(
                           Icons.edit,
@@ -88,7 +99,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                
+
                 const Text(
                   'Elena Rodriguez',
                   style: TextStyle(
@@ -107,7 +118,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-                
+
                 const Row(
                   children: [
                     Expanded(
@@ -128,7 +139,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 30),
-                
+
                 ProfileMenuItem(
                   icon: Icons.shopping_bag_outlined,
                   title: 'My Orders',
@@ -165,13 +176,10 @@ class ProfileScreen extends StatelessWidget {
                   onTap: () {},
                 ),
                 const SizedBox(height: 16),
-                
+
                 OutlinedButton.icon(
                   onPressed: () {},
-                  icon: const Icon(
-                    Icons.logout,
-                    color: Color(0xFFB93F55),
-                  ),
+                  icon: const Icon(Icons.logout, color: Color(0xFFB93F55)),
                   label: const Text(
                     'Logout',
                     style: TextStyle(
@@ -182,7 +190,10 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
-                    side: const BorderSide(color: Color(0xFFB93F55), width: 1.5),
+                    side: const BorderSide(
+                      color: Color(0xFFB93F55),
+                      width: 1.5,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),

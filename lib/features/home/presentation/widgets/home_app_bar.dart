@@ -12,7 +12,7 @@ class HomeAppBar extends StatelessWidget {
         Row(
           children: [
             Icon(Icons.pets, color: AppColors.primaryColor, size: 24),
-            const SizedBox(width: 8),
+            SizedBox(width: 8),
             Text(
               'MyPet',
               style: TextStyle(

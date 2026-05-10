@@ -11,7 +11,7 @@ class QuantitySelector extends StatelessWidget {
     return Container(
       height: 32,
       decoration: BoxDecoration(
-        color: AppColors.qtyBg,
+        color: AppTextColors.qtyBg,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(

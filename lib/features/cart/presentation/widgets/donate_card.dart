@@ -11,9 +11,9 @@ class DonateCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: AppColors.cardBg,
+        color: AppTextColors.cardBg,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: AppColors.divider),
+        border: Border.all(color: AppTextColors.divider),
       ),
       child: Row(
         children: [

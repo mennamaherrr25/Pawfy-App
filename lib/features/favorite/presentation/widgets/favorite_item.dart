@@ -28,9 +28,9 @@ class FavItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.cardBg,
+        color: AppTextColors.cardBg,
         borderRadius: BorderRadius.circular(18.r),
-        border: Border.all(color: AppColors.divider),
+        border: Border.all(color: AppTextColors.divider),
         boxShadow: [
           BoxShadow(
             color: AppColors.primaryColor.withAlpha(20),
@@ -49,7 +49,7 @@ class FavItemCard extends StatelessWidget {
                 width: double.infinity,
                 height: 120.h,
                 decoration: BoxDecoration(
-                  color: AppColors.surface,
+                  color: AppTextColors.surface,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(18.r),
                     topRight: Radius.circular(18.r),
@@ -60,7 +60,7 @@ class FavItemCard extends StatelessWidget {
                 ),
               ),
 
-              // Out-of-stock overlay
+         
               if (!inStock)
                 Container(
                   width: double.infinity,
@@ -78,7 +78,7 @@ class FavItemCard extends StatelessWidget {
                         horizontal: 10.w, vertical: 4.h,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.textSecond,
+                        color: AppTextColors.textSecond,
                         borderRadius: BorderRadius.circular(8.r),
                       ),
                       child: Text(
@@ -159,7 +159,7 @@ class FavItemCard extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: inStock
                               ? AppColors.primaryColor
-                              : AppColors.divider,
+                              : AppTextColors.divider,
                           borderRadius: BorderRadius.circular(8.r),
                         ),
                         child: Icon(

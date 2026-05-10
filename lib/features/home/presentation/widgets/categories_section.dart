@@ -51,17 +51,41 @@ class CategoriesSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Expanded(child: CategoryChip(label: 'Dry Food', icon: Icons.rice_bowl, bgColor: Color(0xFFE9ECC1))),
+                const Expanded(
+                  child: CategoryChip(
+                    label: 'Dry Food',
+                    icon: Icons.rice_bowl,
+                    bgColor: Color(0xFFE9ECC1),
+                  ),
+                ),
                 const SizedBox(width: 15),
-                const Expanded(child: CategoryChip(label: 'Wet Food', icon: Icons.shopping_basket_outlined, bgColor: Color(0xFFF3CCFB))),
+                const Expanded(
+                  child: CategoryChip(
+                    label: 'Wet Food',
+                    icon: Icons.shopping_basket_outlined,
+                    bgColor: Color(0xFFF3CCFB),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 15),
             Row(
               children: [
-                const Expanded(child: CategoryChip(label: 'Toys', icon: Icons.sports_baseball, bgColor: Color(0xFFA6FFB5))),
+                const Expanded(
+                  child: CategoryChip(
+                    label: 'Toys',
+                    icon: Icons.sports_baseball,
+                    bgColor: Color(0xFFA6FFB5),
+                  ),
+                ),
                 const SizedBox(width: 15),
-                const Expanded(child: CategoryChip(label: 'Accessories', icon: Icons.stroller_outlined, bgColor: Color(0xFFFCF6D6))),
+                const Expanded(
+                  child: CategoryChip(
+                    label: 'Accessories',
+                    icon: Icons.stroller_outlined,
+                    bgColor: Color(0xFFFCF6D6),
+                  ),
+                ),
               ],
             ),
           ],

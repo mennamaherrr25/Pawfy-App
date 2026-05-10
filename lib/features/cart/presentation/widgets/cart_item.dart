@@ -27,9 +27,9 @@ class CartItemCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       decoration: BoxDecoration(
-        color: AppColors.cardBg,
+        color: AppTextColors.cardBg,
         borderRadius: BorderRadius.circular(28),
-        border: Border.all(color: AppColors.divider),
+        border: Border.all(color: AppTextColors.divider),
       ),
       child: Padding(
         padding: const EdgeInsets.all(14),
@@ -73,13 +73,13 @@ class CartItemCard extends StatelessWidget {
                         width: 32,
                         height: 32,
                         decoration: BoxDecoration(
-                          color: AppColors.removeRed.withAlpha(30),
+                          color:AppTextColors.removeRed.withAlpha(30),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Icon(
                           Icons.delete_outline_rounded,
                           size: 16,
-                          color: AppColors.removeRed,
+                          color: AppTextColors.removeRed,
                         ),
                       ),
                     ],
@@ -125,7 +125,7 @@ class _Thumbnail extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
-                color: AppColors.badgeSale,
+                color: AppTextColors.badgeSale,
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Text(
