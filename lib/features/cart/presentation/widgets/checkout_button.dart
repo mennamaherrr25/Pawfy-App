@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
-import 'package:pawfy_app/core/theme/app_text_styles.dart';
+import 'package:pawfy_app/core/constants/app_text_styles.dart';
+import 'package:pawfy_app/core/routing/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CheckoutButton extends StatelessWidget {
@@ -14,7 +15,7 @@ class CheckoutButton extends StatelessWidget {
         width: double.infinity,
         height: 54.h,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => Navigator.pushNamed(context, AppRoutes.checkout),
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
             foregroundColor: Colors.white,

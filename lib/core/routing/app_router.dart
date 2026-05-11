@@ -7,6 +7,8 @@ import 'package:pawfy_app/features/on_boarding/presentation/views/onboarding_vie
 import 'package:pawfy_app/features/home/presentation/screens/home_screen.dart';
 import 'package:pawfy_app/features/layout/presentation/screens/layout_screen.dart';
 import 'package:pawfy_app/features/product_details/view/product_details_screen.dart';
+import 'package:pawfy_app/features/checkout/presentation/screens/checkout_screen.dart';
+import 'package:pawfy_app/features/checkout/presentation/screens/order_success_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings setting) {
@@ -40,6 +42,12 @@ class AppRouter {
 
       case AppRoutes.productDetails:
         return MaterialPageRoute(builder: (context) => ProductDetailsScreen());
+
+      case AppRoutes.checkout:
+        return MaterialPageRoute(builder: (context) => const CheckoutScreen());
+
+      case AppRoutes.orderSuccess:
+        return MaterialPageRoute(builder: (context) => const OrderSuccessScreen());
 
       default:
         return MaterialPageRoute(

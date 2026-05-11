@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
 import 'package:pawfy_app/core/routing/app_routes.dart';
-import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/constants/app_text_styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/category_cubit.dart';
 import '../cubit/category_state.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pawfy_app/core/constants/app_colors.dart';
-import 'package:pawfy_app/core/theme/app_text_styles.dart';
+import 'package:pawfy_app/core/constants/app_text_styles.dart';
 import 'package:pawfy_app/core/widgets/custom_button.dart';
 import 'package:pawfy_app/core/widgets/custom_text_widget.dart';
 import 'package:pawfy_app/features/auth/presentation/widgets/divider_with_text.dart.dart';

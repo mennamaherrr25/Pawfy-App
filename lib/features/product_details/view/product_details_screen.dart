@@ -5,7 +5,7 @@ import '../view_model/product_details_cubit.dart';
 import '../view_model/product_details_state.dart';
 import 'widgets/product_header_image.dart';
 import 'widgets/product_info_section.dart';
-import 'package:pawfy_app/core/theme/app_text_styles.dart';
+import 'package:pawfy_app/core/constants/app_text_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
